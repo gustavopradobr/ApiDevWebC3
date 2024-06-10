@@ -19,11 +19,10 @@
 
  3. Agora é só utilizar a API no endereço `http://localhost:3000`
 
-## Exemplos
-### Criar usuário
-Requisição (POST):
+## Autenticação
+### Registrar
 ```
-http://localhost:3000/api/user
+http://localhost:3000/api/auth/signup
 ```
 
 Body:
@@ -34,7 +33,24 @@ Body:
         "password": "suasenha123"
 }
 ```
+### Logar
+```
+http://localhost:3000/api/auth/signin
+```
 
+Body:
+```json
+{
+        "email": "seuemail@gmail.com",
+        "password": "suasenha123"
+}
+```
+
+Copiar o token retornado para dentro do header das próximas requisições.
+
+```Authorization: Bearer codigo_token```
+
+## Exemplos
 ### Listar usuários
 Requisição (GET):
 ```
